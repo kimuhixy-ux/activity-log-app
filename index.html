@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="theme-color" content="#1a1a2e">
+  <title>行動ログ</title>
+  <link rel="manifest" href="manifest.json">
+  <link rel="apple-touch-icon" href="icons/icon-192.png">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>行動ログ</h1>
+    <button id="settings-toggle" aria-label="設定">⚙️</button>
+  </header>
+
+  <main>
+    <div id="settings-panel">
+      <h2>設定</h2>
+      <label for="token-input">GitHub トークン (fine-grained PAT)</label>
+      <input id="token-input" type="password" placeholder="github_pat_xxxxx...">
+      <button id="token-save-btn">トークンを保存</button>
+      <p id="token-status"></p>
+    </div>
+
+    <textarea id="log-input" placeholder="ここにテキストを入力&#10;キーボードの🎤で音声入力できます" autofocus></textarea>
+
+    <button id="save-btn">保存する</button>
+
+    <p id="status"></p>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>

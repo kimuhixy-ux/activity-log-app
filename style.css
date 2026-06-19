@@ -1,0 +1,184 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --bg: #1a1a2e;
+  --surface: #16213e;
+  --primary: #4ea8de;
+  --success: #2ecc71;
+  --danger: #e74c3c;
+  --text: #e8e8e8;
+  --text-dim: #8899aa;
+  --radius: 12px;
+}
+
+html, body {
+  height: 100%;
+  font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 0 16px env(safe-area-inset-bottom);
+}
+
+/* ── ヘッダー ── */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 0 8px;
+}
+
+header h1 {
+  font-size: 20px;
+  font-weight: 700;
+}
+
+#settings-toggle {
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  padding: 4px 8px;
+  color: var(--text-dim);
+}
+
+/* ── メインエリア ── */
+main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding-bottom: 24px;
+}
+
+textarea {
+  flex: 1;
+  min-height: 180px;
+  background: var(--surface);
+  color: var(--text);
+  border: 2px solid transparent;
+  border-radius: var(--radius);
+  padding: 14px;
+  font-size: 17px;
+  line-height: 1.6;
+  resize: none;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+textarea:focus {
+  border-color: var(--primary);
+}
+
+textarea::placeholder {
+  color: var(--text-dim);
+}
+
+#save-btn {
+  background: var(--primary);
+  color: #fff;
+  border: none;
+  border-radius: var(--radius);
+  padding: 16px;
+  font-size: 18px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+#save-btn:active {
+  opacity: 0.7;
+}
+
+#save-btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+/* ── ステータス表示 ── */
+#status {
+  text-align: center;
+  font-size: 15px;
+  min-height: 24px;
+  padding: 4px;
+  border-radius: 8px;
+  transition: opacity 0.3s;
+}
+
+#status.success {
+  color: var(--success);
+}
+
+#status.error {
+  color: var(--danger);
+}
+
+/* ── 設定パネル ── */
+#settings-panel {
+  display: none;
+  background: var(--surface);
+  border-radius: var(--radius);
+  padding: 16px;
+  margin-bottom: 16px;
+}
+
+#settings-panel.open {
+  display: block;
+}
+
+#settings-panel h2 {
+  font-size: 16px;
+  margin-bottom: 12px;
+}
+
+#settings-panel label {
+  display: block;
+  font-size: 14px;
+  color: var(--text-dim);
+  margin-bottom: 4px;
+}
+
+#settings-panel input {
+  width: 100%;
+  background: var(--bg);
+  color: var(--text);
+  border: 1px solid #334;
+  border-radius: 8px;
+  padding: 10px 12px;
+  font-size: 16px;
+  margin-bottom: 12px;
+}
+
+#token-save-btn {
+  width: 100%;
+  background: var(--success);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 12px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+#token-save-btn:active {
+  opacity: 0.7;
+}
+
+#token-status {
+  text-align: center;
+  font-size: 14px;
+  margin-top: 8px;
+  color: var(--success);
+}
